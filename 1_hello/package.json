@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevinongit/k8s_test"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
   }
 }

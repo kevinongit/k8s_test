@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: hello
+  labels:
+    app: hello
+    visualize: "true"
+spec: 
+  ports:
+    # the port that this service should serve on
+    - port: 8000  
+  selector: 
+    app: hello
+  type: LoadBalancer
