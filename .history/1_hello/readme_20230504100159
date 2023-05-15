@@ -1,0 +1,7 @@
+docker images | grep kevinondock
+docker build -t kevinondock/hello:v1 .
+
+docker push kevinondock/hello:v1
+
+docker run -d -p 8000:8000 --name hello kevinondock/hello:v1
+docker exec -it hello /bin/sh   

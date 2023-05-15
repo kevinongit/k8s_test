@@ -1,0 +1,46 @@
+const os = require('os')
+const http = require('http')
+
+const port = 8000
+let cnt = 0
+const version = 'v2'
+
+http.createServer((req, res) => {
+  /// don't increment the counter if the favicon.ico is being requested
+  if (req.url.toLowerCase() === '/favicon.ico') {
+    res.writeHead(200, {'Content-Type': 'image/x-icon'})
+    res.end()
+    // console.log('favicon requested')
+    return
+  } else if (req.url.toLowerCase() === '/version') {
+    res.end(`version : ${version}\n`)
+    console.log(`version(${version}) requested`)
+    return
+  } else if (req.url.toLowerCase() === '/die3') {
+    console.log(`${os.hostname()} : kill signal ignited`)
+    setTimeout(() => {
+      console.log('bye! zaijian..')
+      process.exit(1)
+    }, 3000);
+    res.end(`Server ${os.hostname()} will be dead soon.\n`)
+    return
+  } else if (req.url.toLowerCase() === '/') {
+    console.log(`%c ${os.hostname()} : %c Hello !! ${os.hostname()}, count = ${cnt++} \n`,
+      'color: bule; font-weight: bold;', 
+      'background-image: linear-gradient(red, blue); color: white; padding: 5px; font-weight: normal;'
+    )
+    console.log(
+      "평범한 글자 %c스타일을 넣어볼까요 %c붉은색 %c그라디언트도 가능", 
+      "color: blue; font-weight: bold", "color: red", 
+      "background-image: linear-gradient(red, blue); color: white; padding: 5px;"
+    );
+    res.end(`Hello !! ${os.hostname()}, count = ${cnt++} \n`)
+
+    return
+  }
+
+  res.end(`${req.url} is unknown.\n`)
+
+}).listen(port)
+
+console.log(`Server running at http://localhost:${port}`)

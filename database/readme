@@ -1,0 +1,36 @@
+
+- LoadBalancer or port-forward
+  1. LoadBalancer
+   service manifest add LoadBalancer
+   $ minikube tunnel
+  2. port-forward
+   $ kubectl port-forward postgress-xxxxx 5433:5432
+
+- pgAdmin4 add server (Query Tool)
+ CREATE ROLE myuser WITH LOGIN PASSWORD 'mypassword';
+ ALTER ROLE myuser CREATEDB;
+ CREATE DATABASE mydb;
+ ALTER DATABASE mydb owner to "myuser";
+
+- inside pod and psql
+ $ kubectl exec -it postgres-b6f949774-hvr4n -- /bin/bash
+
+- spring boot + postgres 
+ $ cd hellodata/boot_postgres
+ mvn spring-boot:run -Dspring-boot.run.arguments=--spring.config.location=src/main/resources/application-local.properties
+
+- run the spring boot app as a POD
+  $ mvn clean package -DskipTests
+  docker build -t kevinondock/mybootdata:v1 .
+
+  # docker run for debugging
+  docker run -p 8080:8080 --rm -it --name myboot  kevinondock/mybootdata:v1
+  $ cd ../../
+  $ kubectl create -f ./mybootdata-deployment.yml
+  $ kubectl create -f ./mybootdata-service.yml
+  $ kubectl get service/myboot -o jsonpath="{.spec.ports[*].nodePort}"
+  $ QAHOSTPORT=$(minikube ip):$(kubectl get service/myboot -o jsonpath="{.spec.ports[*].nodePort}")
+  $ curl $QAHOSTPORT/questions
+  $ cd ./boot_postgres
+  $ curl -X POST $QAHOSTPORT/questions -d @anotherquestion.json --header "Content-Type: application/json"
+  $ curl $QAHOSTPORT/questions

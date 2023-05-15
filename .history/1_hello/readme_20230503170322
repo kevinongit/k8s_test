@@ -1,0 +1,4 @@
+docker images | grep kevinondock
+docker build -t kevinondock/hello:v1 .
+
+docker push kevinondock/hello:v1

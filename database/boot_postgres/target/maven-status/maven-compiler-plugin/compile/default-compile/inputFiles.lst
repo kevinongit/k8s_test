@@ -1,0 +1,9 @@
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/repository/QuestionRepository.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/model/Answer.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/model/AuditModel.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/exception/ResourceNotFoundException.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/repository/AnswerRepository.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/controller/AnswerController.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/model/Question.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/controller/QuestionController.java
+/Users/kevin/mylab/k8s_test/database/boot_postgres/src/main/java/com/example/boot_postgres/BootPostgresApplication.java

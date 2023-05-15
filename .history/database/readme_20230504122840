@@ -1,0 +1,15 @@
+
+- LoadBalancer or port-forward
+  1. LoadBalancer
+   service manifest add LoadBalancer
+   $ minikube tunnel
+  2. port-forward
+   $ kubectl port-forward postgress-xxxxx 5433:5432
+
+- pgAdmin4 add server (Query Tool)
+ CREATE ROLE myuser WITH LOGIN PASSWORD 'myuser';
+ ALTER ROLE myuser CREATEDB;
+ CREATE DATABASE mydb;
+ ALTER DATABASE mydb owner to 'myuser';
+
+- 
