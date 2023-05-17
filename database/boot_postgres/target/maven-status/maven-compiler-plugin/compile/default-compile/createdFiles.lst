@@ -1,9 +1,0 @@
-com/example/boot_postgres/repository/QuestionRepository.class
-com/example/boot_postgres/repository/AnswerRepository.class
-com/example/boot_postgres/controller/AnswerController.class
-com/example/boot_postgres/controller/QuestionController.class
-com/example/boot_postgres/model/AuditModel.class
-com/example/boot_postgres/BootPostgresApplication.class
-com/example/boot_postgres/model/Question.class
-com/example/boot_postgres/model/Answer.class
-com/example/boot_postgres/exception/ResourceNotFoundException.class

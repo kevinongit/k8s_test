@@ -26,16 +26,16 @@ spec:
         #   limits:
         #     memory: "400Mi"
         #     cpu: "1000m" # 1 core
-        livenessProbe:
-          httpGet:
-              port: 8000
-              path: /
-          initialDelaySeconds: 10
-          periodSeconds: 5
-          timeoutSeconds: 2          
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8000
-          initialDelaySeconds: 10
-          periodSeconds: 3
+        # livenessProbe:
+        #   httpGet:
+        #       port: 8000
+        #       path: /
+        #   initialDelaySeconds: 10
+        #   periodSeconds: 5
+        #   timeoutSeconds: 2          
+        # readinessProbe:
+        #   httpGet:
+        #     path: /version
+        #     port: 8000
+        #   initialDelaySeconds: 10
+        #   periodSeconds: 3

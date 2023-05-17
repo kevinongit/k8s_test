@@ -26,7 +26,7 @@ http.createServer((req, res) => {
   } else if (req.url.toLowerCase() === '/die3') {
     console.log(chalk.red(`/die3 ${os.hostname()} : kill signal ignited`))
     setTimeout(() => {
-      console.log(chalk.bgYellowBright('expected error occurred. bye~ zaijian~~'))
+      console.log(chalk.bgBlue('expected error occurred. bye~ zaijian~~'))
       process.exit(1)
     }, 3000);
     res.end(`Server ${os.hostname()} will be dead soon.\n`)
@@ -40,7 +40,7 @@ http.createServer((req, res) => {
     return
   }
 
-  console.log(chalk.bgRedBright(`${req.url} is unknown.`))
+  console.log(chalk.bgRed(`${req.url} is unknown.`))
   res.end(`${req.url} is unknown.\n`)
 
 }).listen(port)

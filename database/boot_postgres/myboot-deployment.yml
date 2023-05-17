@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: myboot
-        image: kevinondock/mybootdata:v1         
+        image: kevinondock/myboot:v1         
         ports:
           - containerPort: 8080
 

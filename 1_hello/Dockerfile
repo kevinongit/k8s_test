@@ -2,7 +2,7 @@ FROM node:alpine
 
 LABEL maintainer="Kevin \"covaloper@gmail.com\""
 
-EXPOSE 8000
+# EXPOSE 8000
 
 WORKDIR /opt/app-root/src
 
